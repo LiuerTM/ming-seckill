@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ind.liuer.seckill.dao.UserMapper">
+
+    <resultMap id="TBL_USER_MAP" type="ind.liuer.seckill.domain.User">
+        <id property="id" column="id"/>
+        <result property="nickname" column="nickname"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="portrait" column="portrait"/>
+        <result property="registerTime" column="register_time"/>
+        <result property="loginLastTime" column="login_last_time"/>
+        <result property="loginCount" column="login_count"/>
+        <result property="deleteFlag" column="delete_flag"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <!-- 根据主键（手机号）查询用户信息 -->
+    <select id="selectUserById" resultMap="TBL_USER_MAP">
+        SELECT id,
+               nickname,
+               password,
+               salt,
+               portrait,
+               register_time,
+               login_last_time,
+               login_count,
+               create_time,
+               update_time
+        FROM tbl_user
+        WHERE delete_flag = 0
+          AND id = #{id}
+    </select>
+
+</mapper>

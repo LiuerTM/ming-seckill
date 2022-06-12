@@ -1,0 +1,27 @@
+{
+  "properties": [
+    {
+      "name": "system.config.login-error-details",
+      "type": "java.lang.Boolean",
+      "defaultValue": false,
+      "description": "Whether to display detailed error information when login fails."
+    },
+    {
+      "name": "system.config.login-cookie-name",
+      "type": "java.lang.String",
+      "defaultValue": "UserToken",
+      "description": "Cookie name for login successfully."
+    },
+    {
+      "name": "system.config.login-cookie-max-age",
+      "type": "java.lang.Integer",
+      "defaultValue": 1800,
+      "description": "Cookie max age（unit: seconds, -1 permanent）."
+    },
+    {
+      "name": "system.config.login-ignore-methods",
+      "type": "java.lang.String",
+      "description": "Methods could call if not login."
+    }
+  ]
+}
